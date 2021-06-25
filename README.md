@@ -1,4 +1,4 @@
 # Parallax Scrolling Website
 
-- Moon Light Parallax &nbsp;
+# Moon Light Parallax
 ![screen-gif](./img/parallax-demo.gif)
