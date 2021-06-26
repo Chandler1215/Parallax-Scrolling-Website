@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paralax Scrolling Website | Lets check how it works with a bit of Vanilla JS
+
+    </title>
+</head>
+
+<body>
+    <header>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <a href="#" class="logo">Parallax</a>
+        <ul>
+            <li> <a href="#" class="active">Home</a></li>
+            <li> <a href="#">About</a></li>
+            <li> <a href="#">Work</a></li>
+            <li> <a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="img/stars.png" id="stars">
+        <img src="img/moon.png" id="moon">
+        <img src="img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light </h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="img/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ea possimus veniam blanditiis quos aliquam
+            dolor eaque optio, odit esse ullam sunt numquam culpa mollitia tempore accusamus deleniti magnam quae! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil! Asperiores sint magnam veniam. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Quaerat animi ullam molestias, eius tempora at possimus fugit
+            voluptatum deleniti, dolorem repellat corporis iure praesentium eaque necessitatibus fugiat, quis
+            accusantium aperiam? <br><br>Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil!Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facilis ea possimus
+            veniam blanditiis quos aliquam
+            dolor eaque optio, odit esse ullam sunt numquam culpa mollitia tempore accusamus deleniti magnam quae! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil! Asperiores sint magnam veniam.<br><br>Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Facilis ea possimus veniam blanditiis quos aliquam
+            dolor eaque optio, odit esse ullam sunt numquam culpa mollitia tempore accusamus deleniti magnam quae! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil! Asperiores sint magnam
+            veniam.<br><br>Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil!Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facilis ea possimus
+            veniam blanditiis quos aliquam
+            dolor eaque optio, odit esse ullam sunt numquam culpa mollitia tempore accusamus deleniti magnam quae! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil! Asperiores sint magnam
+            veniam.<br><br>Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil!Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facilis ea possimus
+            veniam blanditiis quos aliquam
+            dolor eaque optio, odit esse ullam sunt numquam culpa mollitia tempore accusamus deleniti magnam quae! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor, tempore labore odit tenetur libero minima
+            magni esse aut porro fugit deleniti possimus quia laborum nihil! Asperiores sint magnam veniam.
+        </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+
+</html>
