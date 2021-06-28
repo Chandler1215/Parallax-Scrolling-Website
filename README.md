@@ -5,3 +5,6 @@
 
 # Butterfly Simple Parallax
 ![screen-gif](./Butterfly-Simple-Parallax/img/butterfly-parallax-demo.gif)
+
+# Forest Parallax
+![screen-gif](./Forest-Parallax/img/forest-parallax-demo.gif)
