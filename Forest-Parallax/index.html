@@ -13,20 +13,21 @@
 
     <div class="container">
         <header>
-            <a href="#" class="logo">NatureComp</a>
+            <a href="#" class="logo">Code Rippers</a>
 
             <nav>
                 <img src="img/menu.svg" alt="menu">
             </nav>
         </header>
 
-        <h1>Preserve Nature</h1>
+        <h1 class="lax">Preserve Nature</h1>
 
-        <div class="line"></div>
-
+        <div class="line_lax">
+            <div class="line"></div>
+        </div>
     </div>
 
-    <div class="container secondary">
+    <div class="container secondary" class="lax_preset_fadeOut:331:0">
         <h2>Strategic</h2>
         <p class="subtext">Alliances</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cupiditate repellat maiores perspiciatis sed
@@ -40,6 +41,93 @@
     <img src="img/mountains.png" alt="mountains" class="mountains">
     <img src="img/forest.png" alt="forest" class="forest">
 
+    <!-- Script for parallax https://github.com/alexfoxy/lax.js-->
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+
+    <!-- JS -->
+    <script>
+        window.onload = function () {
+            lax.init()
+
+            // Add a driver that we use to control our animations
+            lax.addDriver('scrollY', function () {
+                return window.scrollY
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.lax', {
+                scrollY: {
+                    translateY: [
+                        ["250", "elCenterY", "elOutY"],
+                        [-400, '250', '-100'],
+                    ],
+                    opacity: [
+                        [0, 100],
+                        [1, 0]
+                    ]
+                }
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.line_lax', {
+                scrollY: {
+                    translateY: [
+                        ["elInY", "elCenterY", "elOutY"],
+                        [0, 'screenWidth/2', 'screenWidth'],
+                    ],
+                    opacity: [
+                        [0, 100],
+                        [1, 0]
+                    ]
+                }
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.mountains', {
+                scrollY: {
+                    translateY: [           // CSS property
+                        ['100', '400'],  // Driver value map
+                        [0, -160],   // Animation value map
+
+                        {
+                            inertia: 10        // Options
+                        }
+                    ],
+                }
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.forest', {
+                scrollY: {
+                    translateY: [           // CSS property
+                        ['-160', '300'],  // Driver value map
+                        [0, -130],   // Animation value map
+
+                        {
+                            inertia: 10        // Options
+                        }
+                    ],
+                }
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.secondary', {
+                scrollY: {
+                    translateY: [
+                    ["elInY", "elCenterY", "elOutY"],
+                        [0, -430],   // Animation value map
+                    ],
+                    opacity: [
+                        [0, 300],
+                        [0, 1]
+                    ]
+                }
+            })
+
+
+        }
+
+    </script>
 
 </body>
 
